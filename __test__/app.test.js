@@ -4,7 +4,7 @@
 const request = require('supertest');
 const { rm, mkdir } = require('fs/promises');
 const app = require('../lib/app');
-const SimpleDb = require('../lib/simple-db');
+// const SimpleDb = require('../lib/simple-db');
 
 
 const rootDir = `${__dirname}/store`;
@@ -15,7 +15,7 @@ describe('singer CRUD API', () => {
       mkdir(rootDir, { recursive: true })
     );
   });
-  
+
   afterAll(() => { 
     return rm(rootDir, { force: true, recursive: true }).then(() =>
       mkdir(rootDir, { recursive: true })
