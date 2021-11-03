@@ -27,8 +27,8 @@ describe('singer CRUD API', () => {
   it('POST creating the new singer and returning it', async () => {
 
     const singer = { name: 'Brandon Urie', age: 34, genre: 'pop punk' };
-    const res = await request(app).post('/singers').send(JSON.stringify(singer));
-
+    const res = await request(app).post('/singers').send(singer);
+    console.log(singer);
     expect(res.body).toEqual({ ...singer, id: expect.any(String) });
   });
 });
